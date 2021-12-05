@@ -1,0 +1,55 @@
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+      <div class="container">
+    
+        <!-- Brand -->
+        <a class="navbar-brand" href="{{ path('home') }}">
+          <img src="/img/logofooter.png" class="navbar-brand-img" alt="...">
+        </a>
+    
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+    
+          <!-- Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fe fe-x"></i>
+          </button>
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a href="{{ path('collections') }}" class="nav-link">Collections</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a href="{{ path('actualites') }}" class="nav-link">Actualités</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarAccount" data-bs-toggle="dropdown">Portfolio</a>
+              <ul class="dropdown-menu" aria-labelleby="navbarAccount">
+              {% for categorie in categorieNavbar() %}
+              <li class="dropdown-item dropend">
+              <a href="{{ path('portfolio_categorie', {'slug': categorie.slug}) }}" class="nav-link">categorie</a>
+            </li>
+            {% endfor %}
+            </ul>
+            </li>
+            <li class="nav-item">
+              <a href="{{ path('a_propos') }}" class="nav-link">A propos</a>
+            </li>
+            </ul>
+  
+          <!-- Button -->
+          <a class="navbar-btn btn btn-sm btn-primary lift ms-auto" href="{{ path('contact') }}">
+            Me contacter
+          </a>
+    
+        </div>
+    
+      </div>
+    </nav>

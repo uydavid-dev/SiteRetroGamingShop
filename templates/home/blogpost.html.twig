@@ -1,0 +1,67 @@
+ <!-- ARTICLES -->
+    <section class="pb-8 pt-7 pb-md-11 pt-md-10">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-12">
+
+            <!-- Heading -->
+            <h2 class="mb-0">
+              Dernieres actualités
+            </h2>
+
+            <!-- Text -->
+            <p class="mb-5 text-muted">
+              Envie de gaming
+            </p>
+
+          </div>
+        </div>
+
+        <!-- / .row -->
+        <div class="row">
+          {% for blogpost in blogposts %}
+
+          <div
+           class="col-12 col-lg-4 d-flex">
+
+            <!-- Card -->
+            <div class="card shadow-light-lg lift lift-lg" data-aos="fade-up" data-aos-delay="100">
+
+              <!-- Body -->
+              <a class="card-body my-auto" href="{{ path('actualites_detail', {'slug': blogpost.slug}) }}">
+
+                <!-- Heading -->
+                <h3 class="mt-auto">
+                  {{ blogpost.titre }}
+                </h3>
+
+              <!-- Text -->
+              <p class="mb-0 text-muted">
+                  {{ blogpost.contenu|u.truncate(150, '...', false) }}
+                </p>
+
+              </a>
+
+              <!-- Meta -->
+              <a class="card-meta" href="{{ path('actualites_detail', {'slug': blogpost.slug}) }}">
+
+                <!-- Divider -->
+                <hr class="card-meta-divider">
+
+                <!-- Date -->
+                <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                  <time datetime="2021-11-24">Publiée le {{blogpost.createdAt|date('d/m/Y') }}</time>
+                </p>
+
+              </a>
+
+            </div>
+
+
+            </div>
+          {% endfor %}
+          
+        </div> 
+        <!-- / .row -->
+    

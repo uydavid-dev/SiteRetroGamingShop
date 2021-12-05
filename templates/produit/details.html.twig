@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Collections{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid px-md-0">
+    <div class"row justify-content-between gx-0 mx-md-0 mb-6 mb-mb-2">
+
+        <div class="col-12 col-md-3 vh-md-100 mx-auto" style="top: 0;">
+            <aside class="flex-grow-1 py-8 py-md-10">
+                <div>
+                    <h2>{{ produit.nom }}</h2>
+                    {% for categorie in produit.categorie %}
+                    <span class="badge bg-secondary">{{ categorie.nom }}</span>
+                    {% endfor %}
+                </div>
+                <p class="fs-lg mb-7 text-muted">
+                    {{ produit.description }}
+                </p>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h6 class="d-flex mb-0 text-uppercase">
+                            Date de mise en ligne
+                            <span class="ms-auto">{{ produit.dateRealisation|date('d/m/y') }}</span>
+                        </h6>
+                    </li>
+                    {% if produit.enVente %}
+                    <li class="list-group-item">
+                        <h6 class="d-flex mb-0 text-uppercase">
+                            <strong>Disponible à la vente</strong>
+                            <span class="ms-auto"><strong>{{ produit.prix }} €</strong></span>
+                        </h6>
+                    </li>
+                    {% endif %}
+                </ul>
+            </aside>
+        </div>
+        <div class="col-12 col-md-8">
+            <section class="pt-md-10">
+                <img class="w-100 h-auto" src="{{ vich_uploader_asset(produit, 'imageFile') }}" alt="...">
+            </section>
+        </div>
+    </div>
+</div>
+        {% include "commentaire/form.html.twig" %}
+        {% include "commentaire/commentaires.html.twig" %}
+{% endblock %}
