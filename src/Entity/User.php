@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Produit;
+use App\Entity\Blogpost;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use App\Repository\UserRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -58,12 +60,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $aPropos;
 
     /**
-     * @ORM\OneToMany(targetEntity=Produit::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=Produit::class, mappedBy="user", orphanRemoval=true)
      */
     private $produits;
 
     /**
-     * @ORM\OneToMany(targetEntity=Blogpost::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=Blogpost::class, mappedBy="user", orphanRemoval=true)
      */
     private $blogposts;
 

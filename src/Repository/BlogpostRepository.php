@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Blogpost;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Repository\BlogpostRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Blogpost|null find($id, $lockMode = null, $lockVersion = null)

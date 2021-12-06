@@ -4,6 +4,7 @@ namespace App\Service;
 
 use DateTime;
 use App\Entity\Contact;
+use App\Service\ContactService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 

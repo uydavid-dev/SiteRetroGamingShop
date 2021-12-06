@@ -2,8 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\CommentaireRepository;
+use App\Entity\Produit;
+use App\Entity\Blogpost;
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * @ORM\Entity(repositoryClass=CommentaireRepository::class)

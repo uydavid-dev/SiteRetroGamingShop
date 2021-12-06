@@ -36,7 +36,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
-        /**
+    /**
      * pour récupérer le vendeur
      */
     public function getVendeur()

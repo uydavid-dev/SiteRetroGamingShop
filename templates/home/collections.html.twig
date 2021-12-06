@@ -23,7 +23,7 @@
             <!-- Card -->
             <div class="card card-row shadow-light-lg mb-6 lift lift-lg" data-aos="fade-right">
                 <div class="row gx-0">
-                <a class="col-12 col-md-6 bg-cover card-img-start"style="background-image: url({{ vich_uploader_asset(produit,'imageFile') }});" href="{{ path('collections_details', {'slug': produit.slug}) }}">
+                <a class="col-12 col-md-6 bg-cover card-img-start"style="background-image: url({{ vich_uploader_asset(produit, 'imageFile') }});" href="{{ path('collections_details', {'slug': produit.slug}) }}">
                 <img src="{{ vich_uploader_asset(produit, 'imageFile') }}" alt="..." class="img-fluid d-md-none invisible">
               
 

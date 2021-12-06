@@ -5,18 +5,20 @@ namespace App\Controller;
 use App\Entity\Produit;
 use App\Entity\Commentaire;
 use App\Form\CommentaireType;
+use App\Service\CommentaireService;
 use App\Repository\ProduitRepository;
 use App\Repository\CommentaireRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
-use App\CommentaireService\CommentaireService;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProduitController extends AbstractController
 {
-    #[Route('/collections', name: 'collections')]
+    /**
+     * @Route("/collections", name="collections")
+     */
     public function collections(
         ProduitRepository $produitRepository,
         PaginatorInterface $paginator,

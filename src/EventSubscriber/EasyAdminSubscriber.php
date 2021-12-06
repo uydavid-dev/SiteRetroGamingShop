@@ -8,6 +8,7 @@ use Symfony\Component\Security\Core\Security;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
 
+
 class EasyAdminSubscriber implements EventSubscriberInterface
 {
     private $slugger;

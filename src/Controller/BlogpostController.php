@@ -6,6 +6,7 @@ use App\Entity\Blogpost;
 use App\Form\CommentaireType;
 use App\Service\CommentaireService;
 use App\Repository\BlogpostRepository;
+use App\Repository\CommentaireRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +15,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BlogpostController extends AbstractController
 {
-    #[Route('/actualites', name: 'actualites')]
+    
+    /**
+     * @Route("/actualites", name="actualites")
+     */
     public function actualites(
         BlogpostRepository $blogpostRepository,
         PaginatorInterface $paginator,

@@ -12,7 +12,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ContactController extends AbstractController
 {
-    #[Route('/contact', name: 'contact')]
+    /**
+     * @Route("/contact", name="contact")
+     */
     public function index(Request $request, ContactService $contactService): Response
     {
         $contact = new Contact();
