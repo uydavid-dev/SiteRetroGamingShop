@@ -39,7 +39,7 @@
         </div>
         <div class="col-12 col-md-8">
             <section class="pt-md-10">
-                <img class="w-100 h-auto" src="{{ vich_uploader_asset(produit, 'imageFile') }}" alt="...">
+                <img class="w-100 h-auto" src="{{ vich_uploader_asset(produit, 'imageFile')|imagine_filter('full') }}" alt="...">
             </section>
         </div>
     </div>

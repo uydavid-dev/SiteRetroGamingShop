@@ -21,18 +21,18 @@
             <div class="col-12">
 
             <!-- Card -->
-            <div class="card card-row shadow-light-lg mb-6 lift lift-lg" data-aos="fade-right">
-                <div class="row gx-0">
-                <a class="col-12 col-md-6 bg-cover card-img-start"style="background-image: url({{ vich_uploader_asset(produit, 'imageFile') }});" href="{{ path('collections_details', {'slug': produit.slug}) }}">
-                <img src="{{ vich_uploader_asset(produit, 'imageFile') }}" alt="..." class="img-fluid d-md-none invisible">
+          <div class="card card-row shadow-light-lg mb-6 lift lift-lg" data-aos="fade-right">
+              <div class="row gx-0">
+              <a
+               class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url({{ vich_uploader_asset(produit, 'imageFile') }});" href="{{ path('collections_details', {'slug': produit.slug}) }}">
+                <img src="{{ vich_uploader_asset(produit, 'imageFile')|imagine_filter('miniature') }}" alt="..." class="img-fluid d-md-none invisible">
               
 
               <!-- Shape -->
-              
                 <div class="shape shape-end shape-fluid-y svg-shim text-white d-none d-md-block">
-                  <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg> 
+                  <svg viewBox="0 0 112 690" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg> 
                 </div>
-              </div>
+              
               </a>
               <div class="col-12 col-md-6">
 

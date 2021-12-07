@@ -76,10 +76,10 @@ class AppFixtures extends Fixture
 
         $blogpost = new Blogpost();
 
-        $blogpost->setTitre('Blogpost test')
+        $blogpost->setTitre('Blogpost')
                 ->setCreatedAt($faker->dateTimeBetween('-6 month', 'now'))
                 ->setContenu($faker->text(350))
-                ->setSlug('blogpost-test')
+                ->setSlug('blogpost')
                 ->setUser($user);
 
             $manager->persist($blogpost);
@@ -104,7 +104,7 @@ class AppFixtures extends Fixture
                          ->setCreatedAt($faker->dateTimeBetween('-6 month', 'now'))
                          ->setDescription($faker->text())
                          ->setPortfolio($faker->randomElement([true, false]))
-                         ->setSlug('consoleRetro')
+                         ->setSlug($faker->slug)
                          ->setFile('placeholder.jpg')
                          ->addCategorie($categorie)
                          ->setPrix($faker->randomFloat(2, 100, 9999))
@@ -116,9 +116,9 @@ class AppFixtures extends Fixture
 
         $categorie = new Categorie();
 
-            $categorie->setNom('categorie test')
+            $categorie->setNom('console')
                      ->setDescription($faker->words(10, true))
-                     ->setSlug('categorie-test');
+                     ->setSlug('console');
 
         $manager->persist($categorie);
 
@@ -130,7 +130,7 @@ class AppFixtures extends Fixture
                          ->setCreatedAt($faker->dateTimeBetween('-6 month', 'now'))
                          ->setDescription($faker->text())
                          ->setPortfolio($faker->randomElement([true, false]))
-                         ->setSlug('consoleRetro')
+                         ->setSlug($faker->slug)
                          ->setFile('placeholder.jpg')
                          ->addCategorie($categorie)
                          ->setPrix($faker->randomFloat(2, 100, 9999))

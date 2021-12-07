@@ -24,13 +24,13 @@ class BlogpostController extends AbstractController
         PaginatorInterface $paginator,
         Request $request
     ): Response {
-        $data = $blogpostRepository->findBy([],['id' => 'DESC']);
+        $data = $blogpostRepository->findBy([], ['id' => 'DESC']);
 
         $blogposts = $paginator->paginate(
-        $data, /* query Not result */
+            $data, /* query Not result */
         $request->query->getInt('page', 1), /*page number*/
         6
-    );
+        );
     
     
         return $this->render('blogpost/actualites.html.twig', [
@@ -65,5 +65,4 @@ class BlogpostController extends AbstractController
             'commentaires' => $commentaires,
         ]);
     }
-
 }

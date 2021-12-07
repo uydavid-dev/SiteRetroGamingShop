@@ -33,7 +33,7 @@ class ProduitCrudController extends AbstractCrudController
             NumberField::new('prix')->hideOnIndex(),
             BooleanField::new('enVente'),
             BooleanField::new('portfolio'),
-            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
+            TextField::new('imageFile')->setFormType(VichImageType::class),
             ImageField::new('file')->setBasePath('/uploads/produits/')->onlyOnIndex(),
             SlugField::new('slug')->setTargetFieldName('nom')->hideOnindex(),
             AssociationField::new('categorie'),

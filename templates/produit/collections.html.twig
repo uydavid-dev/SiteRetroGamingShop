@@ -27,7 +27,7 @@
                 <div class="card mb-6 shadow-light-lg lift lift-lg">
                     <a class="card-img-top" href="{{ path('collections_details', {'slug': produit.slug}) }}">
               <!-- Image -->
-                <img src="{{ vich_uploader_asset(produit, 'imageFile') }}" alt="..." class="card-img-top">
+                <img src="{{ vich_uploader_asset(produit, 'imageFile')|imagine_filter('miniature') }}" alt="..." class="card-img-top">
                 </a>
               <a class="card-body" href="{{ path('collections_details', {'slug': produit.slug}) }}">
                 <h3>

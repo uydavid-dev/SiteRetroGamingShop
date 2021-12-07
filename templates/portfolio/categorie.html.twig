@@ -5,7 +5,7 @@
 {% block body %}
 
 {% set img = categorie.produits|last %}
-<section data-jarallax data-speed=".8" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-cover jarallax"style="margin-top: -87px; background-image: url({{ vich_uploader_asset(img, 'imageFile') }});">
+<section data-jarallax data-speed=".8" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-cover jarallax"style="margin-top: -87px; background-image: url({{ vich_uploader_asset(img, 'imageFile')|imagine_filter('welcome') }});">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-7 text-center">
@@ -34,8 +34,8 @@
         
         {% for produit in produits %}
           <div class="col-12 col-md-4">
-                <a class="card shadow-light-lg mb-7" href="#!" data-bigpicture='{"imgSrc": "{{ vich_uploader_asset(produit, 'imageFile') }}"}'>
-                    <img class="card-img" src="{{ vich_uploader_asset(produit, 'imageFile') }}" alt="...">
+                <a class="card shadow-light-lg mb-7" href="#!" data-bigpicture='{"imgSrc": "{{ vich_uploader_asset(produit, 'imageFile')|imagine_filter('full') }}"}'>
+                    <img class="card-img" src="{{ vich_uploader_asset(produit, 'imageFile')|imagine_filter('portfolio') }}" alt="...">
                </div>
               </a>
             </div>
