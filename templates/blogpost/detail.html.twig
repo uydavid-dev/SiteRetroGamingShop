@@ -14,11 +14,14 @@
             <h1 class="display-4 text-center">
               {{ blogpost.titre }}
             </h1>
+            
             <div class="row align-items-center py-5 border-top border-bottom">
               <div class="col-auto">
               </div>
               <div class="col ms-5">
-                <time class="fs-sm text-muted" datetime="2021-11-20">Publié le {{ blogpost.createdAt|date('d/m/Y') }}</time>
+                <time class="fs-sm text-muted" datetime="2021-11-20">
+                  Publié le {{ blogpost.createdAt|date('d/m/Y') }}
+                </time>
               </div>
             </div>
                 

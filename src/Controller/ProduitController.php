@@ -53,7 +53,7 @@ class ProduitController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $commentaire = $form->getData();
-            $CommentaireService->persistCommentaire($commentaire, null, $produit);
+            $commentaireService->persistCommentaire($commentaire, null, $produit);
 
             return $this->redirectToRoute('collections_details', ['slug' => $produit->getSlug()]);
         }

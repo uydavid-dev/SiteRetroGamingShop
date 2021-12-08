@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Entity\Produit;
 use App\Entity\Blogpost;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CommentaireRepository;
 
 
 /**

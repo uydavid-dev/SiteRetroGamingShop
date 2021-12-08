@@ -3,7 +3,6 @@
 namespace App\Service;
 
 use DateTime;
-use App\Entity\Contact;
 use App\Entity\Produit;
 use App\Entity\Blogpost;
 use App\Entity\Commentaire;

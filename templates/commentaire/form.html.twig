@@ -16,35 +16,26 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 d-flex justify-content-center">
-            <button class="button" class="btn btn-secondary mb-5" data-be-toggle="modal" data-bs-target="modal" type="submit">
-                Laisser un commentaire
-              </button>
+            <button type="button" class="btn btn-secondary mb-5" data-bs-toggle="modal" data-bs-target="#commentaire">
+              Laisser un commentaire
+            </button>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Modal-->
-<div class="modal fade" id="commentaire" tabindex="-1" aria-labellby="Commentaire" aria-hidden="true">
+<div class="modal fade" id="commentaire" tabindex="-1" aria-labelledby="Commentaire" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Laisser un commentaire</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
                 <div class="modal-body">
                     {{ form(form) }}
                 </div>
-            </div>
-        </div>
-    </div>
+          </div>
+      </div>
 </div>
-
-          
-
-    {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-
-  </body>
-</html>
+</div>

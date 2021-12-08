@@ -1,10 +1,10 @@
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
       <div class="container">
     
         <!-- Brand -->
-        <a class="navbar-brand" href="{{ path('home') }}">
-          <img src="/img/logofooter.png" class="navbar-brand-img" alt="...">
+        <a href="{{ path('home') }}">
+          <img src="/img/logo.png" width="200px" />
         </a>
     
         <!-- Toggler -->
@@ -34,7 +34,7 @@
               <ul class="dropdown-menu" aria-labelleby="navbarAccount">
               {% for categorie in categorieNavbar() %}
               <li class="dropdown-item dropend">
-              <a href="{{ path('portfolio_categorie', {'slug': categorie.slug}) }}" class="nav-link">categorie</a>
+              <a href="{{ path('portfolio_categorie', {'slug': categorie.slug}) }}" class="nav-link">{{ categorie }}</a>
             </li>
             {% endfor %}
             </ul>
@@ -53,3 +53,4 @@
     
       </div>
     </nav>
+    

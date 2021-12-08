@@ -24,11 +24,11 @@ class CommentaireRepository extends ServiceEntityRepository
 
     public function findCommentaires($value)
     {
-        if($value instanceof Blogpost) {
+        if ($value instanceof Blogpost) {
             $object = 'blogpost';
         }
 
-        if($value instanceof Produit) {
+        if ($value instanceof Produit) {
             $object = 'produit';
         }
 

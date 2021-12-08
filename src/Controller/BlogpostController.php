@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Blogpost;
+use App\Entity\Commentaire;
 use App\Form\CommentaireType;
 use App\Service\CommentaireService;
 use App\Repository\BlogpostRepository;
@@ -54,14 +55,14 @@ class BlogpostController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $commentaire = $form->getData();
-            $CommentaireService->persistCommentaire($commentaire, $blogpost, null);
+            $commentaireService->persistCommentaire($commentaire, $blogpost, null);
 
             return $this->redirectToRoute('actualites_detail', ['slug' => $blogpost->getSlug()]);
         }
         
         return $this->render('blogpost/detail.html.twig', [
-            'blogpost' => $blogposts,
-            'form'     => $form-createView(),
+            'blogpost' => $blogpost,
+            'form'     => $form->createView(),
             'commentaires' => $commentaires,
         ]);
     }
